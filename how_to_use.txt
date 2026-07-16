@@ -1,0 +1,61 @@
+============================================================
+              WHATSAPP AUTO-SENDER PRO
+============================================================
+Repository: https://github.com/Sarjin744/whatsapp-auto-sender-pro
+
+This guide explains how to download, install, and use this
+advanced WhatsApp Web Chrome Extension.
+
+------------------------------------------------------------
+STEP 1: HOW TO DOWNLOAD
+------------------------------------------------------------
+If you are downloading this from GitHub:
+1. Go to: https://github.com/Sarjin744/whatsapp-auto-sender-pro
+2. Click the green "Code" button near the top right.
+3. Select "Download ZIP".
+4. Once downloaded, extract (unzip) the file to a folder on 
+   your computer (e.g., your Desktop or Documents folder).
+
+------------------------------------------------------------
+STEP 2: HOW TO INSTALL IN CHROME
+------------------------------------------------------------
+1. Open Google Chrome.
+2. In the address bar, type "chrome://extensions/" and press Enter.
+3. In the top-right corner, turn ON the "Developer mode" switch.
+4. In the top-left corner, click the "Load unpacked" button.
+5. Select the folder where you extracted the extension 
+   (the folder containing "manifest.json").
+6. Click "Select Folder".
+7. The extension "WhatsApp Auto-Sender Pro" will now appear 
+   in your list!
+
+------------------------------------------------------------
+STEP 3: HOW TO USE
+------------------------------------------------------------
+1. Open WhatsApp Web (https://web.whatsapp.com) and log in.
+2. Look for the floating Green Paper Plane button in the 
+   top-right corner of the page. Click it to open the control panel.
+3. Choose your mode:
+   - SINGLE CHAT: Type a message and set how many times to repeat.
+     Open the target chat and click "Start".
+   - BULK SEND: Paste a list of phone numbers (one per line, e.g., 
+     "919876543210, John"). Write a message using "{name}" for 
+     personalization, and click "Start".
+4. Monitor progress and active logs in the panel console.
+
+------------------------------------------------------------
+💡 PRO-TIPS FOR SAFETY (AVOID BANS)
+------------------------------------------------------------
+- Use Spintax (e.g., "{Hello|Hi|Hey} {friend|buddy}!") to generate
+  random variations of your message so they don't look identical.
+- Set a minimum delay of at least 0.5s to 1.5s between messages.
+- Enable Cooldown Breaks (e.g., pause 30 seconds after every 15 
+  messages) under the anti-ban settings panel.
+
+------------------------------------------------------------
+⚖️ DISCLAIMER
+------------------------------------------------------------
+This tool is for educational purposes only. Automated sending 
+violates WhatsApp's Terms of Service and could lead to temporary 
+or permanent account bans. Use responsibly and at your own risk.
+============================================================
