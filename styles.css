@@ -1,0 +1,413 @@
+/* Injected WhatsApp Sender UI Stylesheet */
+
+/* Floating Sidebar Container */
+.wa-sender-panel {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 350px;
+  max-height: calc(100vh - 30px);
+  z-index: 99999;
+  background: rgba(18, 28, 34, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  color: #e9edef;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.wa-sender-panel.collapsed {
+  transform: translateX(370px);
+  opacity: 0.5;
+}
+
+/* Header */
+.wa-sender-header {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #00a884, #005e54);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wa-sender-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wa-sender-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.wa-sender-close-btn:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Main Toggle Button when Collapsed */
+.wa-sender-toggle-trigger {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 99998;
+  background: #00a884;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 15px rgba(0, 168, 132, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s;
+}
+
+.wa-sender-toggle-trigger:hover {
+  background: #008f72;
+  transform: scale(1.05);
+}
+
+.wa-sender-toggle-trigger.hidden {
+  transform: scale(0);
+  pointer-events: none;
+}
+
+/* Tabs */
+.wa-sender-tabs {
+  display: flex;
+  background: rgba(32, 44, 51, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wa-sender-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #8696a0;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.wa-sender-tab:hover {
+  color: #e9edef;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.wa-sender-tab.active {
+  color: #00a884;
+  border-bottom-color: #00a884;
+  background: rgba(0, 168, 132, 0.05);
+}
+
+/* Body Content */
+.wa-sender-body {
+  padding: 14px 16px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wa-sender-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.wa-sender-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+/* Tab Content Visibility */
+.wa-sender-tab-content {
+  display: none;
+}
+
+.wa-sender-tab-content.active {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Form Group */
+.wa-sender-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wa-sender-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8696a0;
+}
+
+.wa-sender-textarea {
+  background: rgba(32, 44, 51, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #e9edef;
+  font-size: 13px;
+  resize: vertical;
+  min-height: 60px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.wa-sender-textarea:focus {
+  border-color: #00a884;
+}
+
+.wa-sender-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.wa-sender-input {
+  background: rgba(32, 44, 51, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: #e9edef;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.wa-sender-input:focus {
+  border-color: #00a884;
+}
+
+/* Cooldown Option row */
+.wa-sender-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.wa-sender-checkbox-row input {
+  cursor: pointer;
+  accent-color: #00a884;
+}
+
+.wa-sender-cooldown-subrow {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 10px;
+  margin-top: 2px;
+  padding-left: 20px;
+}
+
+/* Info Text / Tips */
+.wa-sender-tip {
+  font-size: 10px;
+  color: #8696a0;
+  line-height: 1.3;
+}
+
+.wa-sender-warning-box {
+  background: rgba(255, 187, 0, 0.08);
+  border-left: 3px solid #ffbb00;
+  padding: 8px 10px;
+  border-radius: 0 8px 8px 0;
+  font-size: 10.5px;
+  color: #ffd043;
+  line-height: 1.4;
+}
+
+/* Action Buttons */
+.wa-sender-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.wa-sender-btn {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.wa-sender-btn:active {
+  transform: scale(0.98);
+}
+
+.wa-sender-btn-start {
+  background: #00a884;
+  color: #ffffff;
+}
+
+.wa-sender-btn-start:hover {
+  background: #008f72;
+}
+
+.wa-sender-btn-pause {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e9edef;
+}
+
+.wa-sender-btn-pause:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.wa-sender-btn-stop {
+  background: #ea0038;
+  color: #ffffff;
+}
+
+.wa-sender-btn-stop:hover {
+  background: #c3002f;
+}
+
+.wa-sender-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Progress Section */
+.wa-sender-progress-container {
+  display: none; /* Shown dynamically during sending */
+  background: rgba(32, 44, 51, 0.5);
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wa-sender-progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.wa-sender-progress-bar-bg {
+  background: rgba(255, 255, 255, 0.1);
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.wa-sender-progress-bar-fill {
+  background: linear-gradient(90deg, #00a884, #05e2b2);
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.wa-sender-status-text {
+  font-size: 10px;
+  color: #8696a0;
+  text-align: right;
+}
+
+/* Live Terminal Logs */
+.wa-sender-log-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wa-sender-log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wa-sender-log-clear-btn {
+  background: none;
+  border: none;
+  color: #8696a0;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.wa-sender-log-clear-btn:hover {
+  color: #e9edef;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wa-sender-terminal {
+  background: #0b141a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  height: 90px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10.5px;
+  padding: 8px;
+  overflow-y: auto;
+  color: #a9b2b3;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.wa-sender-log-entry {
+  line-height: 1.3;
+  word-break: break-all;
+}
+
+.wa-sender-log-entry.success {
+  color: #00e676;
+}
+
+.wa-sender-log-entry.info {
+  color: #29b6f6;
+}
+
+.wa-sender-log-entry.warning {
+  color: #ffd54f;
+}
+
+.wa-sender-log-entry.error {
+  color: #ff5252;
+}

@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Auto-Sender Pro",
+  "version": "1.0",
+  "description": "An advanced WhatsApp Web auto-sender with Spintax, randomized delays, and a beautiful UI.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
